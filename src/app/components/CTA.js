@@ -5,6 +5,7 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { FaInstagram } from "react-icons/fa";
 
 const CTA = () => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
   const { scrollYProgress } = useScroll();
   const textScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
 
@@ -16,7 +17,7 @@ const CTA = () => {
       <div className="container mx-auto space-y-16">
         <motion.div className="relative flex items-center justify-center w-full h-[500px] sm:h-[600px] lg:h-[500px] bg-black">
           <Image
-            src="/images/fitness4.jpg"
+            src={`${basePath}/images/fitness4.jpg`}
             alt="Image CTA"
             fill
             className="object-cover w-full h-full opacity-50"

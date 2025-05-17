@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const AboutUs = () => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+
   return (
     <section id="about" className="bg-black text-white py-16 px-6 lg:px-48">
       <div className="container mx-auto space-y-16">
@@ -16,7 +18,7 @@ const AboutUs = () => {
         >
           <div className="lg:w-1/2 shrink-0">
             <Image
-              src="/images/alldayfitmen.png"
+              src={`${basePath}/images/alldayfitmen.png`}
               alt="ALL DAY FIT CLUB iç mekânı"
               width={600}
               height={400}
@@ -160,7 +162,7 @@ const AboutUs = () => {
 
           <div className="lg:w-1/2">
             <Image
-              src="/images/pozodasi.png"
+              src={`${basePath}/images/pozodasi.png`}
               alt="Yüksek kaliteli spor ekipmanları"
               width={600}
               height={400}

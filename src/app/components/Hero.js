@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Hero = () => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
   const images = [
-    { src: "/images/fitness2.jpg", alt: "Hero Image 1" },
-    { src: "/images/fitness1.jpg", alt: "Hero Image 2" },
+    { src: `${basePath}/images/fitness2.jpg`, alt: "Hero Image 1" },
+    { src: `${basePath}/images/fitness1.jpg`, alt: "Hero Image 2" },
   ];
 
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-      ></motion.div>
+      />
 
       <motion.div
         className="absolute inset-0 w-full h-full"
@@ -42,8 +43,8 @@ const Hero = () => {
             <Image
               src={image.src}
               alt={image.alt}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               priority={index === 0}
               quality={75}
             />
